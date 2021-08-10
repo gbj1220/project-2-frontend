@@ -1,13 +1,13 @@
-import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
-import Grid from '@material-ui/core/Grid';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import Typography from '@material-ui/core/Typography';
+import { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
+import {
+	Button,
+	CssBaseline,
+	TextField,
+	Grid,
+	Typography,
+	Container,
+} from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
 	paper: {
@@ -28,6 +28,26 @@ const useStyles = makeStyles((theme) => ({
 export default function SignUp() {
 	const classes = useStyles();
 
+	const [firstName, setFirstName] = useState();
+	const [lastName, setLastName] = useState();
+	const [dateOfBirth, setDateOfBirth] = useState();
+	const [city, setCity] = useState();
+	const [email, setEmail] = useState();
+	const [phoneNumber, setPhoneNumber] = useState();
+
+	console.log(`====== First Name ======`);
+	console.log(firstName);
+	console.log(`====== Last Name ======`);
+	console.log(lastName);
+	console.log(`====== DOB ======`);
+	console.log(dateOfBirth);
+	console.log(`====== City ======`);
+	console.log(city);
+	console.log(`====== Email ======`);
+	console.log(email);
+	console.log(`====== Phone Number ======`);
+	console.log(phoneNumber);
+
 	return (
 		<Container component='main' maxWidth='xs'>
 			<CssBaseline />
@@ -47,6 +67,7 @@ export default function SignUp() {
 								id='firstName'
 								label='First Name'
 								autoFocus
+								onChange={(e) => setFirstName(e.target.value)}
 							/>
 						</Grid>
 						<Grid item xs={12}>
@@ -58,6 +79,7 @@ export default function SignUp() {
 								label='Last Name'
 								name='lastName'
 								autoComplete='lname'
+								onChange={(e) => setLastName(e.target.value)}
 							/>
 						</Grid>
 						<Grid item xs={12}>
@@ -68,6 +90,7 @@ export default function SignUp() {
 								id='dateOfBirth'
 								label='Date of Birth'
 								name='dateOfBirth'
+								onChange={(e) => setDateOfBirth(e.target.value)}
 							/>
 						</Grid>
 						<Grid item xs={12}>
@@ -78,6 +101,7 @@ export default function SignUp() {
 								name='city'
 								label='City'
 								id='city'
+								onChange={(e) => setCity(e.target.value)}
 							/>
 						</Grid>
 						<Grid item xs={12}>
@@ -88,6 +112,7 @@ export default function SignUp() {
 								name='email'
 								label='Email'
 								id='email'
+								onChange={(e) => setEmail(e.target.value)}
 							/>
 						</Grid>
 						<Grid item xs={12}>
@@ -98,6 +123,7 @@ export default function SignUp() {
 								name='phoneNumber'
 								label='Phone Number'
 								id='phoneNumber'
+								onChange={(e) => setPhoneNumber(e.target.value)}
 							/>
 						</Grid>
 					</Grid>
