@@ -8,6 +8,7 @@ import {
 	Typography,
 	Container,
 } from '@material-ui/core';
+import { addApplicantFunc } from '../../applicant-state/applicantState';
 
 const useStyles = makeStyles((theme) => ({
 	paper: {
@@ -34,19 +35,6 @@ export default function SignUp() {
 	const [city, setCity] = useState();
 	const [email, setEmail] = useState();
 	const [phoneNumber, setPhoneNumber] = useState();
-
-	// console.log(`====== First Name ======`);
-	// console.log(firstName);
-	// console.log(`====== Last Name ======`);
-	// console.log(lastName);
-	// console.log(`====== DOB ======`);
-	// console.log(dateOfBirth);
-	// console.log(`====== City ======`);
-	// console.log(city);
-	// console.log(`====== Email ======`);
-	// console.log(email);
-	// console.log(`====== Phone Number ======`);
-	// console.log(phoneNumber);
 
 	return (
 		<Container component='main' maxWidth='xs'>
@@ -132,6 +120,16 @@ export default function SignUp() {
 						variant='contained'
 						color='primary'
 						className={classes.submit}
+						onClick={() =>
+							addApplicantFunc(
+								firstName,
+								lastName,
+								dateOfBirth,
+								city,
+								email,
+								phoneNumber
+							)
+						}
 					>
 						Apply Now
 					</Button>
