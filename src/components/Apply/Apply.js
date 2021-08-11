@@ -35,18 +35,18 @@ export default function SignUp() {
 	const [email, setEmail] = useState();
 	const [phoneNumber, setPhoneNumber] = useState();
 
-	console.log(`====== First Name ======`);
-	console.log(firstName);
-	console.log(`====== Last Name ======`);
-	console.log(lastName);
-	console.log(`====== DOB ======`);
-	console.log(dateOfBirth);
-	console.log(`====== City ======`);
-	console.log(city);
-	console.log(`====== Email ======`);
-	console.log(email);
-	console.log(`====== Phone Number ======`);
-	console.log(phoneNumber);
+	// console.log(`====== First Name ======`);
+	// console.log(firstName);
+	// console.log(`====== Last Name ======`);
+	// console.log(lastName);
+	// console.log(`====== DOB ======`);
+	// console.log(dateOfBirth);
+	// console.log(`====== City ======`);
+	// console.log(city);
+	// console.log(`====== Email ======`);
+	// console.log(email);
+	// console.log(`====== Phone Number ======`);
+	// console.log(phoneNumber);
 
 	return (
 		<Container component='main' maxWidth='xs'>
