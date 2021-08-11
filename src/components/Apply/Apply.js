@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import {
 	Button,
@@ -29,12 +30,17 @@ const useStyles = makeStyles((theme) => ({
 export default function SignUp() {
 	const classes = useStyles();
 
+	const dispatch = useDispatch();
+
 	const [firstName, setFirstName] = useState();
 	const [lastName, setLastName] = useState();
 	const [dateOfBirth, setDateOfBirth] = useState();
 	const [city, setCity] = useState();
 	const [email, setEmail] = useState();
 	const [phoneNumber, setPhoneNumber] = useState();
+
+	console.log(`====== firstName ======`);
+	console.log(firstName);
 
 	return (
 		<Container component='main' maxWidth='xs'>
@@ -43,7 +49,11 @@ export default function SignUp() {
 				<Typography component='h1' variant='h5'>
 					Driver Application
 				</Typography>
-				<form className={classes.form} noValidate>
+				<form
+					className={classes.form}
+					noValidate
+					onSubmit={(e) => e.preventDefault()}
+				>
 					<Grid container spacing={5}>
 						<Grid item xs={12}>
 							<TextField
@@ -121,13 +131,15 @@ export default function SignUp() {
 						color='primary'
 						className={classes.submit}
 						onClick={() =>
-							addApplicantFunc(
-								firstName,
-								lastName,
-								dateOfBirth,
-								city,
-								email,
-								phoneNumber
+							dispatch(
+								addApplicantFunc(
+									firstName,
+									lastName,
+									dateOfBirth,
+									city,
+									email,
+									phoneNumber
+								)
 							)
 						}
 					>

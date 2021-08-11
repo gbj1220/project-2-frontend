@@ -1,12 +1,16 @@
 import './App.css';
-import MainRouter from './MainRouter/MainRouter'
+import MainRouter from './MainRouter/MainRouter';
+import { Provider } from 'react-redux';
+import { reduxStore } from './redux-store/reduxStore';
 
 function App() {
-  return (
-    <div className="App">
-        <MainRouter />
-    </div>
-  );
+	return (
+		<Provider store={reduxStore}>
+			<div className='App'>
+				<MainRouter />
+			</div>
+		</Provider>
+	);
 }
 
 export default App;
