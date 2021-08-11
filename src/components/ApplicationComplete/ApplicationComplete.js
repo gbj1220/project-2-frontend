@@ -9,7 +9,11 @@ import { Autorenew } from '@material-ui/icons';
 
 const useStyles = makeStyles({
     root: {
+        width: 500,
+        height: 500,
         minWidth: 275,
+        margin: "auto",
+        marginTop: "20px"
     },
     title: {
         fontSize: 14,
