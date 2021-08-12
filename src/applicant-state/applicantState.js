@@ -3,8 +3,7 @@ import axios from 'axios';
 export const ADD_APPLICANT = 'codeImmersives/addApplicant';
 
 export const addApplicantFunc =
-	(firstName, lastName, dateOfBirth, city, email, phoneNumber) =>
-	async (dispatch) => {
+	(firstName, lastName, dateOfBirth, city, email, phoneNumber) => async (dispatch, getState) => {
 		try {
 			let response = await axios.post(
 				'http://localhost:4000/users/apply',
@@ -16,9 +15,7 @@ export const addApplicantFunc =
 					email,
 					phoneNumber,
 				}
-			);
-			console.log(firstName);
-			console.log(lastName);
+				);
 
 			dispatch({
 				type: ADD_APPLICANT,
@@ -47,6 +44,13 @@ export const reducer = (state = initialState, action) => {
 	console.log(action.payload);
 	switch (action.type) {
 		case ADD_APPLICANT:
-			return state;
+			return {
+				...state,
+				applicants: [
+					...state.applicants, action.payload
+				]
+		}
+		default: 
+			console.log("default");
 	}
-};
+}

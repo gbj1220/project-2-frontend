@@ -39,9 +39,6 @@ export default function SignUp() {
 	const [email, setEmail] = useState();
 	const [phoneNumber, setPhoneNumber] = useState();
 
-	console.log(`====== firstName ======`);
-	console.log(firstName);
-
 	return (
 		<Container component='main' maxWidth='xs'>
 			<CssBaseline />

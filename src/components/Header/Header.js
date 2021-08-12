@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux';
 
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -24,7 +25,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ButtonAppBar() {
 	const classes = useStyles();
-
+	const user = useSelector(state => state ? state.applicants : null)
+	
+	console.log('user', user)
 	return (
 		<div className={classes.root}>
 			<AppBar position='static'>
@@ -40,11 +43,20 @@ export default function ButtonAppBar() {
 					<Typography variant='h6' className={classes.title}>
 						GT Truck Company
 					</Typography>
+					{user ?
+					<Typography>
+						{console.log(user)}
+						Hello, {user[0].firstName}
+					</Typography>
+						:
 					<Button color='inherit'>
 						<Link to="/apply" className={classes.linkStyle}>
 							Apply
 						</Link>
 					</Button>
+					}
+
+			
 				</Toolbar>
 			</AppBar>
 		</div>
