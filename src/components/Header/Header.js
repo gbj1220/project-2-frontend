@@ -45,14 +45,15 @@ export default function ButtonAppBar() {
 					</Typography>
 					{user ?
 					<Typography>
-						{console.log(user)}
 						Hello, {user[0].firstName}
 					</Typography>
 						:
 					<Button color='inherit'>
-						<Link to="/apply" className={classes.linkStyle}>
-							Apply
-						</Link>
+						{
+							<Link to="/apply" className={classes.linkStyle}>
+								Apply
+							</Link>
+						}
 					</Button>
 					}
 

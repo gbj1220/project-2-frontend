@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom'
 import {
 	Button,
 	CssBaseline,
@@ -140,7 +141,9 @@ export default function SignUp() {
 							)
 						}
 					>
-						Apply Now
+						<Link to='/apply-done'>
+							Apply Now
+						</Link>
 					</Button>
 				</form>
 			</div>
